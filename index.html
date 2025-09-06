@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Nest Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+  body { background: #f0f4f8; color: #333; overflow-x: hidden; }
+
+  /* Hero Section */
+  header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  header h1 { font-size: 3em; margin-bottom: 15px; }
+  header p { font-size: 1.2em; margin-bottom: 25px; }
+  .btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255,71,87,0.4); }
+
+  /* Products Section */
+  section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+  .products { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+  .product {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  .product:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+  .product img {
+    width: 100%; height: 200px; object-fit: cover;
+    border-radius: 10px; margin-bottom: 15px;
+  }
+  .product h3 { color: #2575fc; margin-bottom: 10px; }
+  .product p { font-size: 1.1em; margin-bottom: 15px; color: #444; }
+
+  /* Form inside product */
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  footer { text-align: center; padding: 30px; background: #333; color: white; margin-top: 50px; }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    .products { flex-direction: column; align-items: center; }
+    header h1 { font-size: 2.2em; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Creative Nest Hub</h1>
+    <p>Get your digital subscriptions instantly. Fast delivery, best price.</p>
+  </header>
+
+  <!-- Products Section -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px; color:#2575fc;">Our Products</h2>
+    <div class="products">
+      
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="https://via.placeholder.com/280x200.png?text=Canva+Pro" alt="Canva Pro">
+        <h3>Canva Pro</h3>
+        <p>$5 / Month</p>
+        <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
+          <input type="hidden" name="Product" value="Canva Pro Subscription">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="https://via.placeholder.com/280x200.png?text=YouTube+Premium" alt="YouTube Premium">
+        <h3>YouTube Premium</h3>
+        <p>$4 / Month</p>
+        <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
+          <input type="hidden" name="Product" value="YouTube Premium Subscription">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="https://via.placeholder.com/280x200.png?text=Netflix+Account" alt="Netflix Account">
+        <h3>Netflix Account</h3>
+        <p>$7 / Month</p>
+        <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
+          <input type="hidden" name="Product" value="Netflix Account">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Creative Nest Hub. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
