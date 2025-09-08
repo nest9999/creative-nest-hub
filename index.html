@@ -4,70 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Creative Nest Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-  body { background: #f0f4f8; color: #333; overflow-x: hidden; }
+  :root {
+    --primary-color: #5d3fd3;
+    --secondary-color: #2e8b57;
+    --background-color: #f5f8ff;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --light-text: #666;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+  body { background: var(--background-color); color: var(--text-color); overflow-x: hidden; }
 
   /* Hero Section */
   header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #743ad5, #d53a9d);
     color: white;
     padding: 80px 20px;
     text-align: center;
   }
-  header h1 { font-size: 3em; margin-bottom: 15px; }
-  header p { font-size: 1.2em; margin-bottom: 25px; }
+  header h1 { font-size: 3.5em; font-weight: 700; margin-bottom: 10px; }
+  header p { font-size: 1.2em; font-weight: 400; opacity: 0.9; }
   .btn {
-    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    background: linear-gradient(45deg, #ff6b6b, #f08d4a);
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 50px;
     display: inline-block;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border: none;
   }
-  .btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255,71,87,0.4); }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(240, 141, 74, 0.4);
+  }
 
   /* Products Section */
-  section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-  .products { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+  section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+  .products { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
   .product {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 280px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 320px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .product:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
   .product img {
-    width: 100%; height: 200px; object-fit: cover;
-    border-radius: 10px; margin-bottom: 15px;
+    width: 100%; height: 180px; object-fit: contain;
+    border-radius: 8px; margin-bottom: 20px;
+    transition: transform 0.3s ease;
   }
-  .product h3 { color: #2575fc; margin-bottom: 10px; }
-  .product p { font-size: 1.1em; margin-bottom: 15px; color: #444; }
+  .product:hover img {
+    transform: scale(1.05);
+  }
+  .product h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+  .product .price {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  /* Product Description */
+  .product-description {
+    font-size: 0.9em;
+    color: var(--light-text);
+    margin-bottom: 20px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.4s ease, opacity 0.4s ease;
+  }
+  .product:hover .product-description {
+    height: 60px; /* Adjust based on content */
+    opacity: 1;
+  }
 
   /* Form inside product */
   form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 0.9em;
   }
 
   /* Footer */
-  footer { text-align: center; padding: 30px; background: #333; color: white; margin-top: 50px; }
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 50px;
+  }
 
   /* Responsive */
   @media(max-width:768px) {
     .products { flex-direction: column; align-items: center; }
-    header h1 { font-size: 2.2em; }
+    header h1 { font-size: 2.5em; }
+    .product { width: 90%; }
   }
 </style>
 </head>
@@ -79,15 +135,16 @@
   </header>
 
   <section>
-    <h2 style="text-align:center; margin-bottom:40px; color:#2575fc;">Our Products</h2>
+    <h2 style="text-align:center; margin-bottom:50px; color:var(--primary-color);">Our Products</h2>
     <div class="products">
       
       <div class="product">
-        <img src="b209285d-4ae3-4e88-bbaf-173a683ead1e.jpeg" alt="Canva Pro">
-        <h3>Canva Pro</h3>
-        <p>$5 / Month</p>
+        <img src="b209285d-4ae3-4e88-bbaf-173a683ead1e.jpeg" alt="Canva Owner account verification course">
+        <h3>Canva Owner account verification course</h3>
+        <p class="product-description">5 license 2 sheet 2 video And life time service</p>
+        <p class="price">৳700</p>
         <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
-          <input type="hidden" name="Product" value="Canva Pro Subscription">
+          <input type="hidden" name="Product" value="Canva Owner account verification course">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="Name" placeholder="Your Name" required>
           <input type="email" name="Email" placeholder="Your Email" required>
@@ -98,7 +155,8 @@
       <div class="product">
         <img src="45c33284-c8c5-4e1b-a1ab-6bfdd64ac378.jpeg" alt="YouTube Premium">
         <h3>YouTube Premium</h3>
-        <p>$4 / Month</p>
+        <p class="product-description">Enjoy ad-free streaming, offline downloads, and background play.</p>
+        <p class="price">৳100 / Month</p>
         <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
           <input type="hidden" name="Product" value="YouTube Premium Subscription">
           <input type="hidden" name="_template" value="table">
@@ -111,9 +169,38 @@
       <div class="product">
         <img src="61aaad4c-9d4f-4478-b8bd-8847b6da691b.jpeg" alt="ChatGPT PRO">
         <h3>ChatGPT PRO</h3>
-        <p>$7 / Month</p>
+        <p class="product-description">An advanced subscription to unlock the full potential of AI with ChatGPT PRO.</p>
+        <p class="price">৳400 / Month</p>
         <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
           <input type="hidden" name="Product" value="ChatGPT PRO">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+      </div>
+
+      <div class="product">
+        <img src="f7afe431-ec7d-4450-ad6c-6ae6aa515bb4.jpeg" alt="CapCut Pro">
+        <h3>CapCut Pro</h3>
+        <p class="product-description">Powerful video editing tools with pro features and effects.</p>
+        <p class="price">৳600 / Month</p>
+        <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
+          <input type="hidden" name="Product" value="CapCut Pro">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <button type="submit" class="btn">Buy Now</button>
+        </form>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/280x200.png?text=ChatGPT+Team" alt="ChatGPT Team account">
+        <h3>ChatGPT Team account</h3>
+        <p class="product-description">5 person access</p>
+        <p class="price">৳700 / Month</p>
+        <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST">
+          <input type="hidden" name="Product" value="ChatGPT Team account">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="Name" placeholder="Your Name" required>
           <input type="email" name="Email" placeholder="Your Email" required>
