@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Payment</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-color: #5d3fd3;
+    --secondary-color: #2e8b57;
+    --background-color: #f5f8ff;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --light-text: #666;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+  body { background: var(--background-color); color: var(--text-color); line-height: 1.6; padding: 20px; }
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .payment-instructions {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .payment-instructions ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .payment-instructions li {
+    font-size: 1.1em;
+    color: var(--text-color);
+    background: #f0f4f8;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px dashed var(--primary-color);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  input, button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+  input[type="file"] {
+      padding: 5px;
+  }
+  button {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border: none;
+  }
+  button:hover {
+    background: #4a30a1;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Complete Your Payment</h1>
+    <div class="payment-instructions">
+        <h2>How to Pay</h2>
+        <p>Please send the payment to the following bKash number:</p>
+        <ul>
+            <li>bKash: 01924808903 (Personal)</li>
+        </ul>
+        <p style="margin-top: 20px; font-weight: bold;">After making the payment, please fill out the form below with your details and transaction ID for verification.</p>
+    </div>
+    
+    <form action="https://formsubmit.co/creativenesth@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="Product" value="Product Name from Index Page">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <input type="text" name="Transaction ID" placeholder="Transaction ID (TxnID)" required>
+        <label for="paymentProof">Upload Payment Screenshot:</label>
+        <input type="file" name="Proof of Payment" accept="image/*" required>
+        <button type="submit">Submit Payment Details</button>
+    </form>
+  </div>
+</body>
+</html>
